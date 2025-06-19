@@ -11,4 +11,9 @@ echo \
   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt-get update
+
+# Installer Docker
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
+
+# Création du user jenkins-agent et son ajout au groupe docker
+sudo bash -c 'useradd -m -s /bin/bash jenkins-agent && echo "jenkins-agent:jenkins-agent" | chpasswd && usermod -aG docker jenkins-agent'
