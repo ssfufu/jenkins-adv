@@ -16,4 +16,4 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 
 # Création du user jenkins-agent et son ajout au groupe docker
-sudo bash -c 'useradd -m -s /bin/bash jenkins-agent && echo "jenkins-agent:jenkins-agent" | chpasswd && usermod -aG docker jenkins-agent'
+#sudo bash -c 'useradd -m -s /bin/bash jenkins-agent && echo "jenkins-agent:jenkins-agent" | chpasswd && usermod -aG docker jenkins-agent'
